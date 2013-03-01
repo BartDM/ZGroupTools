@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c1b32bf4-9729-4439-8255-715a8c0cb391" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="ZGroup.MonitoringSuite.BDO" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8527/ZGroup/GasDetectorReaderService/mextcp" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Microsoft.ServiceModel.Samples.wsdl" MetadataType="Wsdl" ID="016dd94f-93c5-48a0-83db-4e478c192f99" SourceId="1" SourceUrl="net.tcp://localhost:8527/ZGroup/GasDetectorReaderService/mextcp" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a113e3a9-8636-4e35-8a0d-e1852c9309f9" SourceId="1" SourceUrl="net.tcp://localhost:8527/ZGroup/GasDetectorReaderService/mextcp" />
+    <MetadataFile FileName="Microsoft.ServiceModel.Samples.xsd" MetadataType="Schema" ID="e79ba914-c179-44d5-9af6-2364b9c96f41" SourceId="1" SourceUrl="net.tcp://localhost:8527/ZGroup/GasDetectorReaderService/mextcp" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="55ccf27a-a8c4-4ce9-b3af-d2799ff1a519" SourceId="1" SourceUrl="net.tcp://localhost:8527/ZGroup/GasDetectorReaderService/mextcp" />
+    <MetadataFile FileName="ZGroup.MonitoringSuite.BDO.Common.xsd" MetadataType="Schema" ID="591390ca-ddf3-4645-9f17-bd8e04f9ac6a" SourceId="1" SourceUrl="net.tcp://localhost:8527/ZGroup/GasDetectorReaderService/mextcp" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

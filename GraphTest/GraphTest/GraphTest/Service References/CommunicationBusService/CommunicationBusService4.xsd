@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Client" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Client" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Interfaces" />
+  <xs:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Set" nillable="true" type="tns:Set" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSet" nillable="true" type="tns:ArrayOfSet" />
+  <xs:complexType name="Set">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cameras" nillable="true" type="tns:ArrayOfCamera" />
+      <xs:element minOccurs="0" name="GasDetectors" nillable="true" type="tns:ArrayOfGasDetector" />
+      <xs:element minOccurs="0" name="IpNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaxtonAreaId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SetId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Set" nillable="true" type="tns:Set" />
+  <xs:complexType name="ArrayOfCamera">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Camera" nillable="true" type="tns:Camera" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCamera" nillable="true" type="tns:ArrayOfCamera" />
+  <xs:complexType name="Camera">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Interfaces" base="q1:ACamera">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CameraImageScreenShotBaseFolder" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SetName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Camera" nillable="true" type="tns:Camera" />
+  <xs:complexType name="ArrayOfGasDetector">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GasDetector" nillable="true" type="tns:GasDetector" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGasDetector" nillable="true" type="tns:ArrayOfGasDetector" />
+  <xs:complexType name="GasDetector">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alarm1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Alarm2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CellLife" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorToolTip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlowRate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullIpAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GasFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GasName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GasValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GasdetectorId" type="xs:long" />
+      <xs:element minOccurs="0" name="IpNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="MaintenanceAlarm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NoMeasurement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Temperature" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GasDetector" nillable="true" type="tns:GasDetector" />
+  <xs:complexType name="GraphMeasurementResult">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GasDetectorIds" nillable="true" type="q2:ArrayOflong" />
+      <xs:element minOccurs="0" name="GraphMeasurements" nillable="true" type="tns:ArrayOfGraphMeasurement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GraphMeasurementResult" nillable="true" type="tns:GraphMeasurementResult" />
+  <xs:complexType name="ArrayOfGraphMeasurement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GraphMeasurement" nillable="true" type="tns:GraphMeasurement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGraphMeasurement" nillable="true" type="tns:ArrayOfGraphMeasurement" />
+  <xs:complexType name="GraphMeasurement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GasDetectorId" type="xs:long" />
+      <xs:element minOccurs="0" name="GasType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GraphMeasurement" nillable="true" type="tns:GraphMeasurement" />
+</xs:schema>

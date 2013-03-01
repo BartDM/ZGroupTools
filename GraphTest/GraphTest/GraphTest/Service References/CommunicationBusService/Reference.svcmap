@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e953904e-111b-4b52-8649-8718e541a313" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="ZGroup.MonitoringSuite.BDO" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/ZGroup/CommunicationBusService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CommunicationBusService.wsdl" MetadataType="Wsdl" ID="534f7f17-32a4-4c42-bfcb-601efc7eeda9" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?wsdl=wsdl0" />
+    <MetadataFile FileName="CommunicationBusService.disco" MetadataType="Disco" ID="6350abc4-f450-4555-a8a3-c0d0f848904b" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?disco" />
+    <MetadataFile FileName="CommunicationBusWcfService.wsdl" MetadataType="Wsdl" ID="9a7772e0-fef3-43bf-a289-5dca17460765" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?wsdl" />
+    <MetadataFile FileName="CommunicationBusService.xsd" MetadataType="Schema" ID="8c854798-2374-465b-b34e-cfe01d2567f3" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd7" />
+    <MetadataFile FileName="CommunicationBusService1.xsd" MetadataType="Schema" ID="0c2b649a-799b-425f-8988-52ed2100feea" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd6" />
+    <MetadataFile FileName="CommunicationBusService2.xsd" MetadataType="Schema" ID="0b4c208a-9ff9-4864-90b6-0adde4c6080d" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd5" />
+    <MetadataFile FileName="CommunicationBusService3.xsd" MetadataType="Schema" ID="7f840252-61f9-4aad-8807-71e6a4d0e083" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd4" />
+    <MetadataFile FileName="CommunicationBusService4.xsd" MetadataType="Schema" ID="ceb73578-9eda-4c13-92e8-ec76f710dec5" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd3" />
+    <MetadataFile FileName="CommunicationBusService5.xsd" MetadataType="Schema" ID="9becc79e-43fa-4e36-891d-093c5b8dd73e" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd2" />
+    <MetadataFile FileName="CommunicationBusService6.xsd" MetadataType="Schema" ID="1d521c34-9ca5-4633-995a-9c15100e1cbd" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd1" />
+    <MetadataFile FileName="CommunicationBusService7.xsd" MetadataType="Schema" ID="28499e06-8f1b-4dd3-8279-7fb7c0297694" SourceId="1" SourceUrl="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
