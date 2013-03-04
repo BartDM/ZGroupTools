@@ -23,7 +23,6 @@ namespace WeakEventsTest
         public MainWindow()
         {
             InitializeComponent();
-
             RaiseEventButton.Click += RaiseEventButton_Click;
 
             AddComponents();
@@ -31,7 +30,7 @@ namespace WeakEventsTest
 
         void RaiseEventButton_Click(object sender, RoutedEventArgs e)
         {
-            ((App)App.Current).Click();
+            ((App)Application.Current).Click();
         }
 
         private void AddComponents()

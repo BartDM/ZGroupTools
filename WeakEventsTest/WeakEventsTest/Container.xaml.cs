@@ -18,7 +18,7 @@ namespace WeakEventsTest
     /// <summary>
     /// Interaction logic for Container.xaml
     /// </summary>
-    public partial class Container : UserControl, IWeakEventListener
+    public partial class Container : UserControl, IDisposable, IWeakEventListener
     {
         public Container()
         {
@@ -27,19 +27,27 @@ namespace WeakEventsTest
             MyWeakEventManager.AddListener(App.Current, this);
         }
 
-        void Container_NewEvent(object sender, EventArgs e)
+        private void AddButton()
         {
-            stackPanel.Children.Add(new Button());
+            var button = new Button() { Content = "Click to stop" };
+            button.Click += (o, args) => Dispose();
+
+            stackPanel.Children.Add(button);
         }
 
         public bool ReceiveWeakEvent(Type managerType, object sender, EventArgs e)
         {
             if (managerType == typeof(MyWeakEventManager))
             {
-                Container_NewEvent(sender, e);
+                AddButton();
                 return true;
             }
             return false;
+        }
+
+        public void Dispose()
+        {
+            MyWeakEventManager.RemoveListener(App.Current, this);
         }
     }
 }
