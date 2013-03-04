@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.CommunicationBus" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.CommunicationBus" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDetectedSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetectedSet" nillable="true" type="tns:DetectedSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetectedSet" nillable="true" type="tns:ArrayOfDetectedSet" />
+  <xs:complexType name="DetectedSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GasDetectorFound" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IpNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="SetFound" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetectedSet" nillable="true" type="tns:DetectedSet" />
+  <xs:complexType name="ArrayOfSavedSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SavedSet" nillable="true" type="tns:SavedSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSavedSet" nillable="true" type="tns:ArrayOfSavedSet" />
+  <xs:complexType name="SavedSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HasGasDetectors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IpNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaxtonAreaId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SetId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SavedSet" nillable="true" type="tns:SavedSet" />
+  <xs:complexType name="ArrayOfClientSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClientSet" nillable="true" type="tns:ClientSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClientSet" nillable="true" type="tns:ArrayOfClientSet" />
+  <xs:complexType name="ClientSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientId" type="xs:long" />
+      <xs:element minOccurs="0" name="ScreenId" type="xs:int" />
+      <xs:element minOccurs="0" name="SetId" type="xs:long" />
+      <xs:element minOccurs="0" name="SlotId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientSet" nillable="true" type="tns:ClientSet" />
+</xs:schema>

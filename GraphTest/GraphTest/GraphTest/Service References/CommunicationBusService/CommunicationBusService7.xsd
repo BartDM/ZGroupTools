@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Microsoft.ServiceModel.Samples" elementFormDefault="qualified" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.CommunicationBus" />
+  <xs:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Client" />
+  <xs:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="AddSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setId" type="xs:long" />
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+        <xs:element minOccurs="0" name="screenId" type="xs:int" />
+        <xs:element minOccurs="0" name="slotId" type="xs:int" />
+        <xs:element minOccurs="0" name="hasPeopleInsideControl" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSetResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSetResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reset">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterClient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ipAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="machineName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterClientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterClientResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnRegisterClient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="machineName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnRegisterClientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UnRegisterClientResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="int1" type="xs:int" />
+        <xs:element minOccurs="0" name="int2" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestServiceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetectSets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetectSetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.CommunicationBus" minOccurs="0" name="DetectSetsResult" nillable="true" type="q1:ArrayOfDetectedSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.CommunicationBus" minOccurs="0" name="sets" nillable="true" type="q2:ArrayOfSavedSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSetsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionSets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.CommunicationBus" minOccurs="0" name="sets" nillable="true" type="q3:ArrayOfClientSet" />
+        <xs:element minOccurs="0" name="clientId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PositionSetsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotConfiguredSets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotConfiguredSetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Client" minOccurs="0" name="GetNotConfiguredSetsResult" nillable="true" type="q4:ArrayOfSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSetsForClientId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSetsForClientIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Client" minOccurs="0" name="GetSetsForClientIdResult" nillable="true" type="q5:ArrayOfSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSetsForPaxtonReader">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSetsForPaxtonReaderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSetsForPaxtonReaderResult" nillable="true" type="q6:ArrayOfKeyValueOflongArrayOfSetanSBK_Pn_S" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphMeasurementsForSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setId" type="xs:long" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphMeasurementsForSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Client" minOccurs="0" name="GetGraphMeasurementsForSetResult" nillable="true" type="q7:GraphMeasurementResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportProgress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="progress" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RespondToDetectSets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.CommunicationBus" minOccurs="0" name="sets" nillable="true" type="q8:ArrayOfDetectedSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

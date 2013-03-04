@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.PaxtonReader" />
+  <xs:complexType name="ArrayOfKeyValueOflongArrayOfSetanSBK_Pn_S">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongArrayOfSetanSBK_Pn_S">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.PaxtonReader" name="Value" nillable="true" type="q1:ArrayOfSet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongArrayOfSetanSBK_Pn_S" nillable="true" type="tns:ArrayOfKeyValueOflongArrayOfSetanSBK_Pn_S" />
+  <xs:complexType name="ArrayOflong">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="long" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOflong" nillable="true" type="tns:ArrayOflong" />
+</xs:schema>

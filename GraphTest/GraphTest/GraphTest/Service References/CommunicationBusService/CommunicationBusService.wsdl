@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Microsoft.ServiceModel.Samples" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Microsoft.ServiceModel.Samples/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd0" namespace="http://Microsoft.ServiceModel.Samples" />
+      <xsd:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.CommunicationBus" />
+      <xsd:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Client" />
+      <xsd:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Interfaces" />
+      <xsd:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Helpers" />
+      <xsd:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8000/ZGroup/CommunicationBusService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/ZGroup.MonitoringSuite.BDO.Services.PaxtonReader" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICommunicationBusWcfService_AddSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSet" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_AddSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_RemoveSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSet" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_RemoveSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_Reset_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reset" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_Reset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_RegisterClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterClient" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_RegisterClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_UnRegisterClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnRegisterClient" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_UnRegisterClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnRegisterClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_TestService_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestService" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_TestService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_DetectSets_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetectSets" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_DetectSets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetectSetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_SaveSets_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSets" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_SaveSets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_PositionSets_InputMessage">
+    <wsdl:part name="parameters" element="tns:PositionSets" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_PositionSets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PositionSetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_GetNotConfiguredSets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotConfiguredSets" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_GetNotConfiguredSets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotConfiguredSetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_GetSetsForClientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSetsForClientId" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_GetSetsForClientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSetsForClientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_GetSetsForPaxtonReader_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSetsForPaxtonReader" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_GetSetsForPaxtonReader_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSetsForPaxtonReaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_GetGraphMeasurementsForSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGraphMeasurementsForSet" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_GetGraphMeasurementsForSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGraphMeasurementsForSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_ReportProgress_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReportProgress" />
+  </wsdl:message>
+  <wsdl:message name="ICommunicationBusWcfService_RespondToDetectSets_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RespondToDetectSets" />
+  </wsdl:message>
+  <wsdl:portType name="ICommunicationBusWcfService">
+    <wsdl:operation name="AddSet">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/AddSet" message="tns:ICommunicationBusWcfService_AddSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/AddSetResponse" message="tns:ICommunicationBusWcfService_AddSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSet">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/RemoveSet" message="tns:ICommunicationBusWcfService_RemoveSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/RemoveSetResponse" message="tns:ICommunicationBusWcfService_RemoveSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reset">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/Reset" message="tns:ICommunicationBusWcfService_Reset_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/ResetResponse" message="tns:ICommunicationBusWcfService_Reset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterClient">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/RegisterClient" message="tns:ICommunicationBusWcfService_RegisterClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/RegisterClientResponse" message="tns:ICommunicationBusWcfService_RegisterClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnRegisterClient">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/UnRegisterClient" message="tns:ICommunicationBusWcfService_UnRegisterClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/UnRegisterClientResponse" message="tns:ICommunicationBusWcfService_UnRegisterClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestService">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/TestService" message="tns:ICommunicationBusWcfService_TestService_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/TestServiceResponse" message="tns:ICommunicationBusWcfService_TestService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetectSets">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/DetectSets" message="tns:ICommunicationBusWcfService_DetectSets_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/DetectSetsResponse" message="tns:ICommunicationBusWcfService_DetectSets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSets">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/SaveSets" message="tns:ICommunicationBusWcfService_SaveSets_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/SaveSetsResponse" message="tns:ICommunicationBusWcfService_SaveSets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PositionSets">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/PositionSets" message="tns:ICommunicationBusWcfService_PositionSets_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/PositionSetsResponse" message="tns:ICommunicationBusWcfService_PositionSets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotConfiguredSets">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/GetNotConfiguredSets" message="tns:ICommunicationBusWcfService_GetNotConfiguredSets_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/GetNotConfiguredSetsResponse" message="tns:ICommunicationBusWcfService_GetNotConfiguredSets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSetsForClientId">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/GetSetsForClientId" message="tns:ICommunicationBusWcfService_GetSetsForClientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/GetSetsForClientIdResponse" message="tns:ICommunicationBusWcfService_GetSetsForClientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSetsForPaxtonReader">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/GetSetsForPaxtonReader" message="tns:ICommunicationBusWcfService_GetSetsForPaxtonReader_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/GetSetsForPaxtonReaderResponse" message="tns:ICommunicationBusWcfService_GetSetsForPaxtonReader_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGraphMeasurementsForSet">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/GetGraphMeasurementsForSet" message="tns:ICommunicationBusWcfService_GetGraphMeasurementsForSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/GetGraphMeasurementsForSetResponse" message="tns:ICommunicationBusWcfService_GetGraphMeasurementsForSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportProgress">
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/ReportProgress" message="tns:ICommunicationBusWcfService_ReportProgress_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RespondToDetectSets">
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ICommunicationBusWcfService/RespondToDetectSets" message="tns:ICommunicationBusWcfService_RespondToDetectSets_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
